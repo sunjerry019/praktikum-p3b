@@ -1,0 +1,57 @@
+\section{Teilversuch 1: Vermessung des Magnetfeldes}
+	Fehler $\Delta B = \pm \SI{10}{\milli\tesla}$
+	\begin{center}
+		\begin{tabular}{l | *{10}{r}}
+			\toprule
+			$I/\si{\ampere}$ & \num{1.070} & \num{2.096} & \num{2.995} & \num{4.153} & \num{5.300} & \num{6.033} & \num{7.09} & \num{8.03} & \num{9.06} & \num{9.48} \\
+			$\Delta I/\si{\ampere}$ & \num{0.005} & \num{0.005} & \num{0.010} & \num{0.020} & \num{0.010} & \num{0.010} & \num{0.01} & \num{0.01} & \num{0.01} & \num{0.01} \\
+			\midrule
+			$B/\si{\milli\tesla}$ & \num{671} & \num{1298} & \num{1910} & \num{2700} & \num{3460} & \num{3950} & \num{4630} & \num{5240} & \num{5750} & \num{5970} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Als Hintergrund haben wir zwei Messungen:
+	\begin{center}
+		\begin{tabular}{ll}
+			\toprule
+			Messung & Hintergrund \\
+			\midrule
+			Davor  & \SI{0.11(2)}{\milli\tesla} \\
+			Danach & \SI{1.13(2)}{\milli\tesla} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Da diese Hintergrundwerte deutlich unter der Unsicherheit $\Delta B$ liegt, vernächlässigen wir den Hintergrund. 
+	\newpage
+	Wir führen nun eine Kurveanpassung mittels \gnuplot{} durch (siehe Appendix \ref{appdx:tv1}):
+	\begin{figure}[!ht]
+		\vspace{-1em}
+	    \centering
+	    \input{./plots/tv1.tex}
+	    \caption{\centering Magnetfeldstärke gegen Strom $\left(\chi^2_{\text{red}} = \num{39.1889} \text{ (klein gegen Werten)} \Rightarrow \text{Gute Anpassung}\right)$}
+	    \label{fig:tv1}
+	    \vspace{-1em}
+	\end{figure}
+
+	Als Endergebnis erhalten wir:
+	\begin{center}
+		\begin{tabular}{lll}
+			\toprule
+			Variable & Roh & Gerundet \\
+			\midrule
+			$m$ 
+				& \SI{641.759(8077)}{\milli\tesla\per\ampere} 
+				& \SI{641(9)}{\milli\tesla\per\ampere} \\
+			$c$ 
+				& \SI{5.09(4933)}{\milli\tesla} 
+				& \SI{5(50)}{\milli\tesla}  \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Da $0$ im Fehlerintervall von $c$ liegt, ist die Kurveanpassung auch vernünftig. Für die Kalibrierung von Strom zu Magnetfeldstärke dient also die folgende Formel:
+	\begin{align}
+		B / \si{\milli\tesla} &= 641 \times I + 5 \\
+		\Delta B / \si{\milli\tesla} &= \gausserror{B}{m,I,c} \notag \\
+		&= \sqrt{\left(I\Delta m\right)^2 + (m\Delta I)^2 + \left(\Delta c\right)^2} \notag \\
+		&= \sqrt{81I^2 + 410881(\Delta I)^2 + 2500}
+	\end{align}

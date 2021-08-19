@@ -1,0 +1,8 @@
+#!/bin/bash
+
+WEG=$(dirname $1)
+BAS=$(basename $1)
+
+cd $WEG
+texliveonfly --compiler=pdflatex --arguments="-synctex=1 -interaction=nonstopmode --shell-escape" $BAS
+# texliveonfly --compiler=pdflatex --arguments="-synctex=1 -interaction=nonstopmode --shell-escape" $BAS
