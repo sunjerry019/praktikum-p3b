@@ -1,0 +1,152 @@
+iter      chisq       delta/lim  lambda   m             c            
+   0 1.6686639557e+04   0.00e+00  6.69e-03    1.000000e+00   1.000000e+00
+   1 4.5514983573e+02  -3.57e+06  6.69e-04    5.626171e+03   3.729550e+02
+   2 1.3254968490e+00  -3.42e+07  6.69e-05    7.733635e+03  -5.147936e+03
+   3 4.8256122798e-01  -1.75e+05  6.69e-06    7.819436e+03  -5.456495e+03
+   4 4.8256097818e-01  -5.18e-02  6.69e-07    7.819482e+03  -5.456663e+03
+iter      chisq       delta/lim  lambda   m             c            
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.482561
+rel. change during last iteration : -5.17652e-07
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.401066
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.160854
+p-value of the Chisq distribution (FIT_P)              : 0.922706
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 7819.48          +/- 41.58        (0.5318%)
+c               = -5456.66         +/- 135          (2.475%)
+
+correlation matrix of the fit parameters:
+                m      c      
+m               1.000 
+c              -0.879  1.000 
+iter      chisq       delta/lim  lambda   m             c            
+   0 1.5474967614e+04   0.00e+00  6.39e-03    1.000000e+00   1.000000e+00
+   1 3.8640256958e+02  -3.90e+06  6.39e-04    5.622902e+03   4.773145e+02
+   2 1.8368825165e+00  -2.09e+07  6.39e-05    7.729605e+03  -5.474338e+03
+   3 6.6970959016e-01  -1.74e+05  6.39e-06    7.842753e+03  -5.913672e+03
+   4 6.6970898273e-01  -9.07e-02  6.39e-07    7.842834e+03  -5.913989e+03
+iter      chisq       delta/lim  lambda   m             c            
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.669709
+rel. change during last iteration : -9.07016e-07
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.472479
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.223236
+p-value of the Chisq distribution (FIT_P)              : 0.880304
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 7842.83          +/- 54.3         (0.6923%)
+c               = -5913.99         +/- 192.4        (3.254%)
+
+correlation matrix of the fit parameters:
+                m      c      
+m               1.000 
+c              -0.894  1.000 
+iter      chisq       delta/lim  lambda   m             c            
+   0 1.0526830137e+04   0.00e+00  5.33e-03    1.000000e+00   1.000000e+00
+   1 3.0771158033e+02  -3.32e+06  5.33e-04    5.601429e+03   2.472810e+02
+   2 1.0177570375e+00  -3.01e+07  5.33e-05    7.721799e+03  -5.865193e+03
+   3 3.0567896612e-01  -2.33e+05  5.33e-06    7.817514e+03  -6.241526e+03
+   4 3.0567870771e-01  -8.45e-02  5.33e-07    7.817572e+03  -6.241753e+03
+iter      chisq       delta/lim  lambda   m             c            
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.305679
+rel. change during last iteration : -8.45339e-07
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.319207
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.101893
+p-value of the Chisq distribution (FIT_P)              : 0.958957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 7817.57          +/- 40.5         (0.5181%)
+c               = -6241.75         +/- 142.6        (2.284%)
+
+correlation matrix of the fit parameters:
+                m      c      
+m               1.000 
+c              -0.874  1.000 
+iter      chisq       delta/lim  lambda   m             c            
+   0 1.0976687949e+04   0.00e+00  5.54e-03    1.000000e+00   1.000000e+00
+   1 3.1709119045e+02  -3.36e+06  5.54e-04    5.484630e+03   3.421966e+02
+   2 1.2906238259e+00  -2.45e+07  5.54e-05    7.676945e+03  -6.033082e+03
+   3 3.2044487748e-01  -3.03e+05  5.54e-06    7.793900e+03  -6.488908e+03
+   4 3.2044440168e-01  -1.48e-01  5.54e-07    7.793981e+03  -6.489228e+03
+iter      chisq       delta/lim  lambda   m             c            
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.320444
+rel. change during last iteration : -1.48482e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.326825
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.106815
+p-value of the Chisq distribution (FIT_P)              : 0.956139
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 7793.98          +/- 42.73        (0.5483%)
+c               = -6489.23         +/- 151.5        (2.334%)
+
+correlation matrix of the fit parameters:
+                m      c      
+m               1.000 
+c              -0.891  1.000 
+iter      chisq       delta/lim  lambda   m             c            
+   0 1.0836599662e+04   0.00e+00  5.57e-03    1.000000e+00   1.000000e+00
+   1 3.3516021190e+02  -3.13e+06  5.57e-04    5.418597e+03   2.913066e+02
+   2 1.4395131509e+00  -2.32e+07  5.57e-05    7.666430e+03  -6.327888e+03
+   3 3.7754029575e-01  -2.81e+05  5.57e-06    7.788317e+03  -6.802702e+03
+   4 3.7753977043e-01  -1.39e-01  5.57e-07    7.788403e+03  -6.803037e+03
+iter      chisq       delta/lim  lambda   m             c            
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.37754
+rel. change during last iteration : -1.39141e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.354749
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.125847
+p-value of the Chisq distribution (FIT_P)              : 0.944842
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+m               = 7788.4           +/- 46.19        (0.5931%)
+c               = -6803.04         +/- 163.7        (2.406%)
+
+correlation matrix of the fit parameters:
+                m      c      
+m               1.000 
+c              -0.892  1.000 
+
+lambda-
+[7819.48207698864,7842.83446531683,7817.57179454737,7793.98133299567,7788.40258574259]
+
+[41.582142626232,54.2971415193017,40.4996415277695,42.7343688524447,46.1919447295457]
+
+\toprule
+Strom $I/\si{\ampere}$ & $m/\si{\micro\meter\squared}$ & $c/\si{\micro\meter\squared}$ & $p_0$ & $\chi^2_\text{red}$ \\
+\midrule
+        \num{2.495(5)} & \num{7819,48208(4158214)} & \num{-5456,66280(13503726)} & \num{0,69783(1766)} & \num{0,16085} \\
+        \num{4.190(10)} & \num{7842,83447(5429714)} & \num{-5913,98932(19243657)} & \num{0,75406(2509)} & \num{0,22324} \\
+        \num{5.662(10)} & \num{7817,57179(4049964)} & \num{-6241,75284(14258167)} & \num{0,79843(1870)} & \num{0,10189} \\
+        \num{7.01(1)} & \num{7793,98133(4273437)} & \num{-6489,22780(15147792)} & \num{0,83259(1996)} & \num{0,10681} \\
+        \num{8.78(1)} & \num{7788,40259(4619194)} & \num{-6803,03677(16369671)} & \num{0,87348(2165)} & \num{0,12585} \\
+\bottomrule
+
+# Nr    m/um^2  m_err/um^2      c/um^2   c_err/um^2      p       p_err
+1       7819.4820769886 41.5821426262   -5456.6628032539        135.0372595466  0.6978291848    0.0176635401
+2       7842.8344653168 54.2971415193   -5913.9893218755        192.4365696268  0.7540627496    0.0250858278
+3       7817.5717945474 40.4996415278   -6241.7528405377        142.5816729242  0.7984260336    0.0187017691
+4       7793.9813329957 42.7343688524   -6489.2277952663        151.4779180213  0.8325947315    0.0199641909
+5       7788.4025857426 46.1919447295   -6803.0367673382        163.6967074291  0.8734829373    0.0216470394

@@ -80,8 +80,63 @@
 	    \label{fig:tv4-messungen}
 	\end{figure}
 	\newpage
-	Als Messreihe haben wir:
-	\todo{messreihe}
-	\newpage
-	
+	Da die Messreihe zu lang ist, wird sie hier nicht wieder formatiert. Sie finden die Messreihe im Laborprotokoll unter Teilversuch 4. Alle Rechnungen für $r_m^2$ und $\Delta r_m^2 = 2r_m(\Delta r_m)$ werden direkt in \gnuplot{} berechnet und somit hier nicht weiter beschrieben. 
+
+	Wir führe nun die benötigte Kurveanpassungen zu $r_m^2 = mp + c$ durch. Der $p$-Achsenschnittpunkt $p_0$ ist somit gegeben durch:
+	\begin{align}
+		p_0 &= -\frac{c}{m} \\
+		\Delta p_0 &= |p_0|\relquad{c,m}
+	\end{align}
+	und im \gnuplot{} direkt berechnet. 
+
+	Für $\lambda_-$:
+	\begin{figure}[!ht]
+	    \centering
+	    \vspace{-0.5em}
+	    % https://tex.stackexchange.com/a/98142
+	    \resizebox{6in}{!}{\input{./plots/tv4-l-minus.tex}}
+	    \caption{Verlauf der Ringradien}
+	    \label{fig:tv4-l-minus}
+	    \vspace{-0.5em}
+	\end{figure}
+	\begin{center}
+		\begin{tabular}{lrrrr}
+			\toprule
+			Strom $I/\si{\ampere}$ & $m/\si{\micro\meter\squared}$ & $c/\si{\micro\meter\squared}$ & $p_0$ & $\chi^2_\text{red}$ \\
+			\midrule
+	        \num{2.495(5)} & \num{7819,48208(4158214)} & \num{-5456,66280(13503726)} & \num{0,69783(1766)} & \num{0,16085} \\
+	        \num{4.190(10)} & \num{7842,83447(5429714)} & \num{-5913,98932(19243657)} & \num{0,75406(2509)} & \num{0,22324} \\
+	        \num{5.662(10)} & \num{7817,57179(4049964)} & \num{-6241,75284(14258167)} & \num{0,79843(1870)} & \num{0,10189} \\
+	        \num{7.01(1)} & \num{7793,98133(4273437)} & \num{-6489,22780(15147792)} & \num{0,83259(1996)} & \num{0,10681} \\
+	        \num{8.78(1)} & \num{7788,40259(4619194)} & \num{-6803,03677(16369671)} & \num{0,87348(2165)} & \num{0,12585} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Die kleine $\chi^2_\text{red}$'s zeigt eine gute Kurveanpassung. 
+
+	Für $\lambda_+$:
+	\begin{figure}[!ht]
+	    \centering
+	    \vspace{-0.5em}
+	    % https://tex.stackexchange.com/a/98142
+	    \resizebox{6in}{!}{\input{./plots/tv4-l-plus.tex}}
+	    \caption{Verlauf der Ringradien}
+	    \vspace{-0.5em}
+	    \label{fig:tv4-l-plus}
+	\end{figure}
+	\begin{center}
+		\begin{tabular}{lrrrr}
+			\toprule
+			Strom $I/\si{\ampere}$ & $m/\si{\micro\meter\squared}$ & $c/\si{\micro\meter\squared}$ & $p_0$ & $\chi^2_\text{red}$ \\
+			\midrule
+	        \num{2.495(5)} & \num{7730,21963(7843301)} & \num{-4179,08793(26759715)} & \num{0,54062(3505)} & \num{0,47301} \\
+	        \num{4.190(10)} & \num{7775,73625(2472955)} & \num{-3877,46605(9308847)} & \num{0,49866(1208)} & \num{0,03054} \\
+	        \num{5.662(10)} & \num{7795,95244(2719018)} & \num{-3608,40828(10057227)} & \num{0,46286(1300)} & \num{0,03390} \\
+	        \num{7.01(1)} & \num{7847,41240(7353670)} & \num{-3321,94377(27918566)} & \num{0,42332(3580)} & \num{0,24968} \\
+	        \num{8.78(1)} & \num{7791,59699(6048853)} & \num{-2877,79824(21359518)} & \num{0,36935(2756)} & \num{0,08922} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Die kleine $\chi^2_\text{red}$'s zeigt eine gute Kurveanpassung.  
+
 
