@@ -38,6 +38,7 @@
 	    \vspace{-0.5em}
 	\end{figure}
 	\newpage
+	Für die eigentliche Messung:
 	\begin{figure}[!ht]
 	    \centering
 	   	\begin{subfigure}{0.48\textwidth}
@@ -139,4 +140,60 @@
 	\end{center}
 	Die kleine $\chi^2_\text{red}$'s zeigt eine gute Kurveanpassung.  
 
+	Die Quellcodes finden Sie im Appendix \ref{appdx:tv4-part1}.
 
+	Aus Gleichungen (34) und (35) der Anleitung ist:
+	\begin{align}
+		\Delta p_0 &= p_0^+ - p_0^- = -2dn(k^+ - k^-) = 2dn \Delta k \\
+		\implies \Delta k &= \frac{\Delta p_0}{2dn}
+	\end{align}
+	Wir bezeichnen $\Delta k$ und $\Delta P_0$ als $K$ und $P$, sodass keine Verwechselungsgefahr bei der Berechnung der Unsicherheiten entsteht:
+	\begin{align}
+		K = \frac{P}{2dn} &&\Rightarrow && \Delta K = \frac{\Delta P}{2dn}
+	\end{align}
+	Dabei gilt:
+	\begin{align}
+		\Delta P = \addquad{p_0^+, p_0^-}
+	\end{align}
+	\textbf{Es ist hier zu bemerken, dass $\lambda_+$ und $\lambda_-$ während des Versuchs vertauscht waren.} $K$ ist somit:
+	\begin{align}
+		K = \frac{p_0^- - p_0^+}{2dn} &&
+		\Delta K = \frac{\addquad{p_0^+, p_0^-}}{2dn}
+	\end{align}
+	wobei $p_0^+$ und $p_0^-$ die experimentelle $+$ und $-$ sind. Wegen zeitliche Gründen sind die Auswertung hier nicht neu gemacht. 
+
+	Wir runden nun alle Werten entsprechend die gewöhnte Rundungsregeln und wandeln die Stromwerte in Magnetfeldstärke gemäß Gleichungen \eqref{eqn:i-to-b} und \eqref{eqn:i-to-b-err}. Alle Rechnungen erfolgt im Libreoffice Calc. Die $m$ und $c$-Werten werden hier nicht gerundet, da wir sowieso die Werte direkt im \gnuplot{} auswerten. 
+
+	Gegeben sei $d = \SI{3e-3}{\meter}$ und $n = \num{1.45}$:
+	\begin{center}
+		\begin{tabular}{lll|ll}
+			\toprule
+				$I/\si{\ampere}$ & $P_0^-$ & $P_0^+$ & $B/\si{\tesla}$ & $K/\si{\per\meter}$ \\
+			\midrule
+				\num{2.495(5)} & \num{0.698(18)} & \num{0.54(4)} & \num{1.60(6)} & \num{18(6)} \\
+				\num{4.190(10)} & \num{0.754(26)} & \num{0.499(13)} & \num{2.69(7)} & \num{29(4)} \\
+				\num{5.662(10)} & \num{0.798(19)} & \num{0.463(14)} & \num{3.63(8)} & \num{38.5(28)} \\
+				\num{7.01(1)} & \num{0.833(20)} & \num{0.42(4)} & \num{4.50(9)} & \num{47(6)} \\
+				\num{8.78(1)} & \num{0.873(22)} & \num{0.369(28)} & \num{5.63(10)} & \num{58(5)} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Damit mit Appendix \ref{appdx:tv4-part2}:
+	\begin{figure}[!ht]
+	    \centering
+	    \resizebox{5in}{!}{\input{./plots/tv4-B-K.tex}}
+	    \caption{Gute Kurveanpassung $K = mB + c$, $\chi^2_\text{red} = 0.0017626 << 1$}
+	    \label{fig:tv4-B-K}
+	\end{figure}
+
+	Daraus erhalten wir: $m = \SI{4.95897(3595)}{\per\tesla\meter} = \SI{4.96(4)}{\per\tesla\meter}$ und $c = \SI{1.180(135)}{\per\meter} = \SI{1.18(14)}{\per\meter}$. 
+
+	Damit ist $g_{1\rightarrow 2} = \num{0.1060(9)}$ nach Gleichung (21) der Anleitung, was sich mit unseren theoretisch erwarteten Wert $-1, 0, 1$ signifikant unterscheidet. 
+
+	Dieser Unterschied liegt vielleicht an folgenden Gründe:
+	\begin{itemize}
+		\item Kamera/Programm war nicht kalibriert $\implies$ Radienwerte entsprichen nicht die Wahrheit.
+		\item Ungenaue Schätzung der Radien aus dem Programm
+		\item Die Justierung der Linsen hat ein große Einfluss auf den Radien. Vielleicht war die Justierung nicht richtig.
+		\item Rechenfehler ist unterlaufen. 
+	\end{itemize}

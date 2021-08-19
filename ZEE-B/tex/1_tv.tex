@@ -50,8 +50,8 @@
 	\end{center}
 	Da $0$ im Fehlerintervall von $c$ liegt, ist die Kurveanpassung auch vernünftig. Für die Kalibrierung von Strom zu Magnetfeldstärke dient also die folgende Formel:
 	\begin{align}
-		B / \si{\milli\tesla} &= 641 \times I + 5 \\
+		B / \si{\milli\tesla} &= 641 \times I + 5 \label{eqn:i-to-b}\\
 		\Delta B / \si{\milli\tesla} &= \gausserror{B}{m,I,c} \notag \\
 		&= \sqrt{\left(I\Delta m\right)^2 + (m\Delta I)^2 + \left(\Delta c\right)^2} \notag \\
-		&= \sqrt{81I^2 + 410881(\Delta I)^2 + 2500}
+		&= \sqrt{81I^2 + 410881(\Delta I)^2 + 2500} \label{eqn:i-to-b-err}
 	\end{align}
