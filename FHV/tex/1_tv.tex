@@ -1,0 +1,35 @@
+\section{Teilversuch 1: Messung des Elektronenstrom als Funktion der Anodenspannung für Quecksilber}
+	Die optimale Messkurve und Einstellungen sowie die Erklärungen zu Fragen 2 und 3 der Auswertung finden Sie im Laborprotokoll.
+
+	Um die Energieniveau zu finden, wir verwenden die Abstände $d$ zwischen den einzelnen Minima/Maxima (Minimum $\leftrightarrow$ Minimum bzw. Maximum $\leftrightarrow$ Maximum:
+
+	\begin{center}
+		\begin{tabular}{l | *{6}{r}}
+			\toprule
+			Abstand $d$ (Max) / \si{\volt} & \num{4.40} & \num{4.66} & \num{4.94} & \num{4.95} & \num{4.99} & \num{5.05} \\
+			Abstand $d$ (Min) / \si{\volt} & \num{4.86} & \num{4.81} & \num{4.90} & \num{4.86} & \num{4.99} & \num{5.08} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+
+	Der Fehler des einzelnen Datenpunktes ist hier vernachlässigt, denn diese irrelevant ist. Die Anzahl der Datenpunkten ($N = 12$) ist groß genug, dass es sinnvoll ist, direkt der Mittelwert und die Standardabweichung zu bilden, anstatt irgendwelche Fehlerfortpflanzung durchzuführen. Hier betrachten wir somit die Typ A Unsicherheit\footnote{\url{https://www.isobudgets.com/type-a-and-type-b-uncertainty/}, \today}.
+
+	Dazu nehmen wir ein Normalverteilung der Daten aus:
+	\begin{align}
+		\overline{d} &= \frac{\sum_i{d_i}}{N} = \SI{4.87417}{\volt} \sigfig{6}\\
+		\Delta d &= \sqrt{\frac{1}{N-1} \sum_{i=1}^N \left(d_i - \overline{d}\right)^2} = \SI{0.187348}{\volt} \sigfig{6}
+	\end{align}
+	Die obige Rechnungen erfolgte im LibreOffice Calc mittels der Funktionen \texttt{AVERAGE} und \texttt{STDEV.S}. 
+
+	Somit erhalten wir $d = \SI{4.87(19)}{\volt}$, also ist $E_{\,\text{Hg, exp}} = \SI{4.87(19)}{\electronvolt}$. Dieser Wert stimmt mit dem Literaturwert $E_{\,\text{Hg, lit}} = \SI{4.9}{\electronvolt}$ überein.
+	\newpage
+	Ein Photon mit der Energie $E = \SI{4.87(19)}{\electronvolt}$ hat die Wellenlänge:
+	\begin{align}
+		\lambda &= \frac{hc}{E} = \SI{254.588}{\nano\meter} \sigfig{6} \\
+		\Delta \lambda &= \abs{-\frac{hc}{E^2}\Delta E} = \SI{9.93258}{\nano\meter} \sigfig{6}
+	\end{align}
+	oder $\lambda = \SI{255(10)}{\nano\meter}$. Als Literaturwert haben wir aus $E = \SI{4.9}{\electronvolt}$ eine Wellenlänge von $\lambda_\text{lit} = \SI{253}{\nano\meter}$. Ein Photon dieser Wellenlänge liegt in der ultraviolett Spektralbereich und ist somit nicht sichtbar (ca. \num{380} bis \num{750}\si{\nano\meter}) \citep{starr_biology_2006}. 
+
+	Aus dem NIST Datenbank \citep{NIST_ASD} für \texttt{[Hg I]} ($= \ce{Hg^{0+}}$) ist $$5d^{10}6s^2~^1\!S_0 \leftarrow 5d^{10}6s6p~^3\!P_1$$ mit einer Wellenlänge von $\SI{253.65}{\nano\meter}$ die nächste Emissionslinie. Da diese gut im Fehlerbereich unseres experimentelles Wertes liegt, ist diese der Übergang, der der gerade berechnete Linie entspricht. 
+
+	% https://physics.nist.gov/PhysRefData/ASD/Html/lineshelp.html#LINES_SPECTRA

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+WEG=$(dirname $1)
+BAS=$(basename $1)
+
+cd $WEG
+
+if [[ "$2" == "bib" ]]; then 
+	texliveonfly --compiler=pdflatex --arguments="-synctex=1 -interaction=nonstopmode --shell-escape" $BAS
+	biber $(basename $BAS .tex)
+	texliveonfly --compiler=pdflatex --arguments="-synctex=1 -interaction=nonstopmode --shell-escape" $BAS
+fi
+
+texliveonfly --compiler=pdflatex --arguments="-synctex=1 -interaction=nonstopmode --shell-escape" $BAS
+# texliveonfly --compiler=pdflatex --arguments="-synctex=1 -interaction=nonstopmode --shell-escape" $BAS
