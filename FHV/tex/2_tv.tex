@@ -45,45 +45,36 @@
 			d &= \SI{6.17}{\volt} - \SI{4.26}{\volt} = \SI{1.91}{\volt} \\
 			\Delta d &= \addquad{\SI{0.03}{\volt}, \SI{0.03}{\volt}} = \SI{0.04243}{\volt} \sigfig{4}
 		\end{align}
-		Also erhalten wir mit $U_{B1} = U_2 / 10$: $d = \SI{19.1(5)}{\volt}$. Das entspricht ein Energieunterschied $\Delta E = \SI{19.1(5)}{\electronvolt}$, was ein Photon mit der Wellenlänge:
+		Also erhalten wir mit $U_{B1} = U_2 / 10$: $d' = \SI{19.1(5)}{\volt}$. Das entspricht ein Energieunterschied $\Delta E = \SI{19.1(5)}{\electronvolt}$, was ein Photon mit der Wellenlänge:
 		\begin{align}
-			\lambda &= \frac{hc}{E} = \SI{649.132}{\nano\meter} \sigfig{6} \\
-			\Delta \lambda &= \abs{-\frac{hc}{E^2}\Delta E} = \SI{16.993}{\nano\meter} \sigfig{5}
+			\lambda &= \frac{hc}{E} = \SI{64.9132}{\nano\meter} \sigfig{6} \\
+			\Delta \lambda &= \abs{-\frac{hc}{E^2}\Delta E} = \SI{1.6993}{\nano\meter} \sigfig{5}
 		\end{align}
-		oder $\lambda = \SI{649(17)}{\nano\meter}$.
+		oder $\lambda = \SI{64.9(17)}{\nano\meter}$.
 
-		Aus dem NIST Datenbank \citep{NIST_ASD} für \texttt{[Ne I]} ($= \ce{Ne^{0+}}$) haben wir die folgende Emissionslinie zur Auswahl: 
-		\begin{multicols}{4}
-			\begin{itemize}
-				\item \SI{632.81646}{\nano\meter}
-				\item \SI{633.08894}{\nano\meter}
-				\item \SI{633.44276}{\nano\meter}
-				\item \SI{635.18532}{\nano\meter}
-				\item \SI{636.49963}{\nano\meter}
-				\item \SI{638.29914}{\nano\meter}
-				\item \SI{640.1076}{\nano\meter}
-				\item \SI{640.22480}{\nano\meter}
-				\item \SI{640.97469}{\nano\meter}
-				\item \SI{642.17044}{\nano\meter}
-				\item \SI{644.47118}{\nano\meter}
-				\item \SI{650.65277}{\nano\meter}
-				\item \SI{653.28824}{\nano\meter}
-				\item \SI{659.89528}{\nano\meter}
-				\item \SI{660.29007}{\nano\meter}
-				\item \SI{664.00095}{\nano\meter}
-				\item \SI{664.080}{\nano\meter}
-				\item \SI{665.20925}{\nano\meter}
-				\item \SI{666.6892}{\nano\meter}
- 			\end{itemize}
-		\end{multicols}
-		Dabei hat die Linien $\lambda = \SI{650.65277}{\nano\meter}$ und $\lambda = \SI{640.22480}{\nano\meter}$ ($15000$ bzw. $20000$) die größte relative Intensität (also mehr wahrscheinlich). Da der Fehlerintervall aber zu groß relativ zum Unterschied zwischen die Emissionslinien ist, ist es schwer zu sagen, welcher genauer Übergang diese Energie entspricht.
+		Aus dem NIST Datenbank \citep{NIST_ASD} für \texttt{[Ne I]} ($= \ce{Ne^{0+}}$) haben wir die folgende Emissionslinie im dreifachen Fehlerintervall zur Auswahl:
+		\begin{multicols}{3}
+		 	\begin{itemize}
+		 		\item \SI{59.87056}{\nano\meter}
+				\item \SI{59.88897}{\nano\meter}
+				\item \SI{60.00365}{\nano\meter}
+				\item \SI{60.27263}{\nano\meter}
+				\item \SI{61.56283}{\nano\meter}
+				\item \SI{61.86716}{\nano\meter}
+				\item \SI{61.91023}{\nano\meter}
+				\item \SI{62.68232}{\nano\meter}
+				\item \SI{62.97388}{\nano\meter}
+		 	\end{itemize}
+		\end{multicols}{4} 
+		Dabei hat der Übergang mit $\lambda = \SI{62.97388}{\nano\meter}$ ein Wellenlänge, die im Vergleich zu unserem experimentelle Wert am nächsten ist. Das Unterschied kommt vielleicht aus der ungenaue Bestimmung der Energieunterschied mit was ist effektiv nur einen Datenpunkt. Diese Übergang ist mit:
+		\begin{align*}
+			2s^22p^6~^1\!S_0 
+			\leftarrow 
+			2s^22p^5\left(^2\!P_{3/2}\right)4s~^2[\,\nicefrac{3}{2}\,]_1
+		\end{align*}
+		assoziert.
 
-		Die Linien $\lambda = \SI{650.65277}{\nano\meter}$ ist mit dem Übergang $$2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{3}{2}\,]_1 \leftarrow 2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{5}{2}\,]_2$$ verbunden.
-		Die Linien $\lambda = \SI{640.22480}{\nano\meter}$ ist mit dem Übergang $$2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{3}{2}\,]_2 \leftarrow 2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{5}{2}\,]_3$$ verbunden.
-
-		Alle diese Übergänge liegen im sichtbaren Bereich des EM-Spektrums.
-
-		In erster Linie sehe ich leider keine Widersprüche. Die leuchtende Wolken sehen rot/orange aus und die berechnete Wellenlänge liegt auch genau in diesem Bereich:
+		Diese Wellenlänge (ultraviolett) liegt weit außerhalb dem sichtbaren Bereich. Es besteht hier also ein Widerspruch, weil wir im Versuch rote/orange Wolken erkennen konnten:
 		\begin{figure}[!ht]
 		    \centering
 		    \includegraphics[width=0.6\textwidth]{./images/fhv-neon.jpg}
@@ -91,15 +82,73 @@
 		    \label{fig:fhv-neon}
 		\end{figure}
 
-		Was mir hier auffällt ist nur die etwa ungewöhnliche $L = \nicefrac{3}{2}$ bzw. $L = \nicefrac{5}{2}$ Zustände. Zu diesem Thema habe ich leider nicht viel im Internet gefunden. Ich würde mich freuen, wenn wir das und der in der Aufgabe genannte Widerspruch im Nachgespräch klären können. 
+		Diese rote/orange Wolken besagt eine Wellenlänge, die etwa $10$-Fach größer ist. Ich habe am Anfang $U_2 = U_{B1}$ anstatt $U_2 = 10\times U_{B1}$ gerechnet und die Wellenlänge hat gut gepasst, was interessant ist.
 
-		Was ein Widerspruch sein könnte ist vielleicht: Mit einem Bohrischen Atommodell stellen wir diskrete Energieniveau vor, es ist also scharfe Minima wie in Teilversuch 1 erwartet. Jedoch sehen wir hier keine scharfe Minima, sondern auch kleine locale Minima innerhalb der etwa größere Minima. (Unterstruktur)
+		Was mir hier auch auffällt ist die etwa ungewöhnliche $L = \nicefrac{3}{2}$ Zustand. Zu diesem Thema habe ich leider nicht viel im Internet gefunden. Ich würde mich freuen, wenn wir das im Nachgespräch klären können. 
 
-		Ein andere Widerspruch könnte auch sein, dass das Bohrische Atommodell sagt voraus, dass 
+		% Aus dem NIST Datenbank \citep{NIST_ASD} für \texttt{[Ne I]} ($= \ce{Ne^{0+}}$) haben wir die folgende Emissionslinie zur Auswahl: 
+		% \begin{multicols}{4}
+		% 	\begin{itemize}
+		% 		\item \SI{632.81646}{\nano\meter}
+		% 		\item \SI{633.08894}{\nano\meter}
+		% 		\item \SI{633.44276}{\nano\meter}
+		% 		\item \SI{635.18532}{\nano\meter}
+		% 		\item \SI{636.49963}{\nano\meter}
+		% 		\item \SI{638.29914}{\nano\meter}
+		% 		\item \SI{640.1076}{\nano\meter}
+		% 		\item \SI{640.22480}{\nano\meter}
+		% 		\item \SI{640.97469}{\nano\meter}
+		% 		\item \SI{642.17044}{\nano\meter}
+		% 		\item \SI{644.47118}{\nano\meter}
+		% 		\item \SI{650.65277}{\nano\meter}
+		% 		\item \SI{653.28824}{\nano\meter}
+		% 		\item \SI{659.89528}{\nano\meter}
+		% 		\item \SI{660.29007}{\nano\meter}
+		% 		\item \SI{664.00095}{\nano\meter}
+		% 		\item \SI{664.080}{\nano\meter}
+		% 		\item \SI{665.20925}{\nano\meter}
+		% 		\item \SI{666.6892}{\nano\meter}
+ 	% 		\end{itemize}
+		% \end{multicols}
+		% Dabei hat die Linien $\lambda = \SI{650.65277}{\nano\meter}$ und $\lambda = \SI{640.22480}{\nano\meter}$ ($15000$ bzw. $20000$) die größte relative Intensität (also mehr wahrscheinlich). Da der Fehlerintervall aber zu groß relativ zum Unterschied zwischen die Emissionslinien ist, ist es schwer zu sagen, welcher genauer Übergang diese Energie entspricht.
+
+		% Die Linien $\lambda = \SI{650.65277}{\nano\meter}$ ist mit dem Übergang $$2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{3}{2}\,]_1 \leftarrow 2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{5}{2}\,]_2$$ verbunden.
+		% Die Linien $\lambda = \SI{640.22480}{\nano\meter}$ ist mit dem Übergang $$2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{3}{2}\,]_2 \leftarrow 2s^22p^5\left(^2\!P_{3/2}\right)3s~^2[\,\nicefrac{5}{2}\,]_3$$ verbunden.
+
+		% Alle diese Übergänge liegen im sichtbaren Bereich des EM-Spektrums.
+
+		% In erster Linie sehe ich leider keine Widersprüche. Die leuchtende Wolken sehen rot/orange aus und die berechnete Wellenlänge liegt auch genau in diesem Bereich:
+
+		% Was ein Widerspruch sein könnte ist vielleicht: Mit einem Bohrischen Atommodell stellen wir diskrete Energieniveau vor, es ist also scharfe Minima wie in Teilversuch 1 erwartet. Jedoch sehen wir hier keine scharfe Minima, sondern auch kleine locale Minima innerhalb der etwa größere Minima. (Unterstruktur)
+
+		% Ein andere Widerspruch könnte auch sein, dass das Bohrische Atommodell sagt voraus, dass 
 
 	\subsection{Zur Frage 5}
-		Die Unterstruktur, die man beim dritten Minima erkennen kann, lässt sich vermütlich mit der Feinstrukturaufspaltung erklären. Wegen 
+		Die Unterstruktur, die man beim dritten Minima erkennen kann, lässt sich vermütlich mit der Feinstrukturaufspaltung erklären. Aus der Termschema von \ce{Ne} sehen wir viele Energieniveau, die zwar unterhalb unsere $\Delta E = \SI{19.1(5)}{\volt}$ sind, aber kein Grundzustand ($2s^22p^6~^1\!S_0$) ist. Die angeregte Elektronen können dann erst in diesem Energieniveau zerfallen, bevor sie im Grundzustand landen, was Photonen im sichtbaren Bereich (weniger Energie) erzeugt. Diese Energieniveau erscheinen in unserem Versuch dann als diese Unterstruktur. 
+		\begin{figure}[!ht]
+		    \centering
+		    \includegraphics[width=0.6\textwidth]{images/neon-levels.jpg}
+		    \caption{Ausgewählte \ce{Ne} Niveau \citep{rapior_new_2006}}
+		    \label{fig:neon-levels}
+		\end{figure}
 
+		Wenn wir die Energieunterschied zwischen die Unterstruktur berechen, finden wir auch genau das erwartete Energieunterschied. Beispielsweise:
+		\begin{align}
+			\SI{61.7}{\volt} - \SI{59.8}{\volt} = \SI{1.9}{\volt} \implies \lambda = \SI{653}{\nano\meter} \sigfig{3}
+		\end{align}
+		Hier wird keine Fehlerrechnung durchgeführt, da diese Rechnung nur zur Anschauung des Effekts dient. 
+
+	\subsection{Zur Frage 6}
+		Aus \cite{rapior_new_2006} werden folgenden Phänomenen beschrieben, was ich auch Versuch beobachtet habe:
+		\begin{itemize}
+			\item Abstände zwischen nacheinander folgende Minima bzw. Maxima steigt an und bleibt nicht konstant. Siehe Tabelle \ref{table:tv1}.
+			\item Die Anzahl der Dips steigt an mit steigende Minimum-Nummer. (Unterstruktur deutlich bei dritten Maxima im Vergleich zu zweiten. Es liegen sogar mehr Unterstruktur, siehe Teilversuch 2 Laborprotokoll)
+		\end{itemize}
+		Der Versuchsaufbau im \cite{rapior_new_2006} ist etwa der gleicher als unserer Aufbau. Es ist also zu erwarten, dass wir ähnliche Phänomenen beobachten können. Der Haupteffekt ist im Paper beschrieben:
+		\begin{quote}
+			... We will show that this increase is due to the additional acceleration of electrons over the mean free path after the excitation energy has been reached, but before inelastic collisions with atoms occur...
+		\end{quote}
+		Sie haben dann mithilfe unterschiedliche Temperatur diese Phänomenen untersucht. Die Erklärung war anschaulich und interessant. Wir haben zwar nur ein Temperatur untersucht, aber die Ergebnisse sind auch in unserem Versuch erkannt und infolgedessen reproduzierbar. 
 
 
 
