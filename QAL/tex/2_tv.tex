@@ -1,4 +1,181 @@
-\section{Teilversuch 2: Messung des Elektronenstrom als Funktion der Anodenspannung für Neon}
+\section{Teilversuch 2: Kugelflächenfunktionen im Spärischen Resonator}
+	\subsection{Teilversuch 2a: Zuordnung der Legendrepolynome durch Bestimmung der Nullstellen}
+		Alle Frequenzen sind mittels digitale Signalgenerator eingestellt, somit ist keine Unsicherheit gegeben. Man sieht aber auf dem Oszilloskop schon einige Abweichungen/Geräusch von Signal.
+
+		Eine Fehler von $\Delta V = \pm \SI{0.002}{\volt}$ ist abgeschätzt.
+		\begin{center}
+			\begin{tabular}{llrrr}
+				\toprule
+				\multicolumn{2}{r}{$f$/\si{\hertz}} & \num{3,663} & \num{4,950} & \num{6,190} \\
+				$\alpha$/\si{\degree} & $\theta$/\si{\degree} & Spannung/\si{\volt} & Spannung/\si{\volt} & Spannung/\si{\volt}  \\
+				\midrule
+				\num{180} & \num{180} & \num{0,373} & \num{0,539} & \num{-0,303} \\
+				\num{170} & \num{172,933425610738} & \num{0,356} & \num{0,528} & \num{-0,279} \\
+				\num{160} & \num{165,893955739434} & \num{0,331} & \num{0,474} & \num{-0,211} \\
+				\num{150} & \num{158,909418821001} & \num{0,295} & \num{0,375} & \num{-0,103} \\
+				\num{140} & \num{152,009109282217} & \num{0,243} & \num{0,244} & \num{0,011} \\
+				\num{130} & \num{145,224563330281} & \num{0,189} & \num{0,091} & \num{0,103} \\
+				\num{120} & \num{138,590377890729} & \num{0,138} & \num{-0,052} & \num{0,169} \\
+				\num{110} & \num{132,145070558482} & \num{0,031} & \num{-0,151} & \num{0,187} \\
+				\num{100} & \num{125,93195832035} & \num{0,031} & \num{-0,225} & \num{0,169} \\
+				\num{90} & \num{120} & \num{0,042} & \num{-0,259} & \num{0,117} \\
+				\num{80} & \num{114,404497337886} & \num{0,780} & \num{-0,269} & \num{0,046} \\
+				\num{70} & \num{109,207479725344} & \num{-0,128} & \num{-0,236} & \num{0,029} \\
+				\num{60} & \num{104,47751218593} & \num{-0,105} & \num{-0,185} & \num{-0,071} \\
+				\num{50} & \num{100,288585136763} & \num{-0,182} & \num{-0,119} & \num{-0,091} \\
+				\num{40} & \num{96,7177134641804} & \num{-0,167} & \num{-0,055} & \num{-0,085} \\
+				\num{30} & \num{93,8409657162581} & \num{-0,189} & \num{-0,099} & \num{-0,065} \\
+				\num{20} & \num{91,7279410723505} & \num{-0,202} & \num{-0,069} & \num{-0,040} \\
+				\num{10} & \num{90,4352300024699} & \num{-0,205} & \num{-0,099} & \num{-0,030} \\
+				\num{0} & \num{90} & \num{-0,210} & \num{-0,112} & \num{0,032} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}		
+		Insbesondere es ist während der Plotting auffällig, dass die Vorzeichen für $f = \SI{4.950}{\hertz}$ und $\SI{6.190}{\hertz}$ andersrum sein sollten, also sind die Messwerte während der Kurveanpassung entsprechend angepasst. 
+
+		Aus Gleichung (43) der Anleitung gilt:
+		\begin{align}
+			\theta &= \arccos\left(\frac{1}{2}\cos(\alpha) - \frac{1}{2}\right) \\
+			\Rightarrow \Delta \theta &= \gausserror{\theta}{\alpha} = \frac{\sin(\alpha)\Delta \alpha}{\sqrt{-\cos^2(\alpha) + 2 \cos(\alpha) + 3}}
+		\end{align}
+		wobei alle Winkel in Formel in Radian sind. Somit ergibt sich aus $\Delta\alpha = \pm\SI{1}{\degree}$:
+		\begin{center}
+			\begin{tabular}{l|r|r|rrr}
+				\toprule
+				Frequenz $f$/\si{\hertz} & \num{3.663} & \num{4.950} & \num{6.190} & \num{6.190} & \num{6.190} \\
+				\midrule
+				Nullstelle $\theta$/\si{\degree} & \num{125.3(7)} & \num{141.2(7)} & \num{90.1(6)} & \num{110.2(7)} & \num{152.7(7)} \\
+				Nullstelle $\theta_\text{Lit}$/\si{\degree} & \num{125.26} & \num{140.77} & ? & \num{109.88} & \num{149.44} \\
+				\bottomrule				
+			\end{tabular}
+		\end{center}
+		Alle Rechnungen erfolgt in LibreOffice Calc. 
+
+		Die zugeordnete Legendrepolynome haben $l-m$ Nullstellen. Aus dem spätere Teilversuch 2b wissen wir, dass es hier um $m = 0$ handelt. Wir vergleichen die Werte oben mit der Literaturwerte auf Seite 32 der Anleitung und erhalten:
+		\begin{center}
+			\begin{tabular}{lrrr}
+				\toprule
+				Frequenz $f$/\si{\hertz} & \num{3.663} & \num{4.950} & \num{6.190} \\
+				\midrule
+				Ordnung $l$ & $2$ & $3$ & $4$\\
+				\bottomrule				
+			\end{tabular}
+		\end{center}
+		Die Nullstelle bei $\theta = \SI{90.1(6)}{\degree}$ ist anscheinend eine Fehlmessung, weil es für $l = 4$ keine Nullstelle bei diesem Winkel $\theta$ gibt. Das könnte daran liegen, dass $\alpha = \SI{5(1)}{\degree}$ sehr nah am Rand der Skala ist und dass der Aufbau die Legendrepolynome nicht perfekt simulieren kann. Die Ordnungen sind auch im Laborprotokoll zum Teilversuch 2b vermerkt.
+
+		Für die Kurveanpassung brauchen wir noch die Fehlerbalken:
+		\begin{align}
+			\cos(\theta) &= \frac{1}{2}\cos(\alpha) - \frac{1}{2} \\
+			\Rightarrow \Delta \cos(\theta) &= \gausserror{\cos(\theta)}{\alpha} = \abs{\frac{-\sin(\alpha)\Delta\alpha}{2}}
+		\end{align}
+		Wir passen nun die Kurven an in \gnuplot{} (Siehe Appendix \ref{appdx:tv2a}):
+		\begin{center}
+			\begin{tabular}{lll}
+				\toprule
+				Ordnung $l$ & Fit-Funktion & Anfangswerte \\
+				\midrule
+				$2$ & $Ax^2 + B$  & $A = 1.5, B = -0.5$ \\
+				$3$ & $Cx^3 + Dx$ & $C = 2.5, D = -1.5$ \\
+				$4$ & $Ex^4 + Fx^2 + G$  & $E = \nicefrac{35}{8}, F = -\nicefrac{30}{8}, G = \nicefrac{3}{8}$ \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		\newpage
+		\begin{figure}[!ht]
+		    \centering
+		    % \vspace{-1em}
+		    % https://tex.stackexchange.com/a/98142
+		    \resizebox{\textwidth}{!}{\input{plots/tv2a.tex}}
+		    \caption{Zuordnung der Legendrepolynome}
+		    \label{fig:tv1-2}
+		    % \vspace{-1em}
+		\end{figure}
+		Es scheint, dass das Vorzeichen einiger Messungen falsch bestimmt waren, zum Beispiel: bei der zwei lila Punkten zwischen \num{-0.5} und \num{-0.4}. 
+
+		Als Fit-Ergebnis haben wir:
+		\begin{center}
+			\begin{tabular}{lllll}
+				\toprule
+				Ordnung $l$ & Fit Variablen &&& $\chi^2_\text{red}$ \\
+				\midrule
+				$2$ &
+				$A = \num{0.562(20)}$ & 
+				$B = \num{-0.188(10)}$ &&  \num{140.555} \\
+				$3$ &
+				$C = \num{1.42(9)}$ &
+				$D = \num{-0.88(8)}$ & & \num{296.633} \\
+				$4$ &
+				$E = \num{1.33(12)}$ &
+				$F = \num{-1.08(12)}$ & 
+				$G = \num{0.049(14)}$ & \num{224.661} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		Aus $\chi^2_\text{red} \gg 1$ sind die Kurveanpassungen eher schlecht. Das liegt vermutlich daran, dass die Messmethode eher ungenau ist. Da es um Schallwellen handelt, kommt es auch viele Störungen von außen. Die Wärme von der Hände könnte auch die Temperatur im Resonator über den Versuchsverlauf ändern, sodass die Schallgeschwindigkeit sich ändert. Es war auch während des Versuchs beobachtet, dass die Spannung sich mit der Zeit langsam geändert hat, ohne dass ich irgendwas gemacht hatte. 
+
+		\pagebreak
+		Wir vergleichen nun die erhaltene Ergebnissen. Um irgendwelche Skalierungsfaktor zu vermeiden, schauen wir die Verhältnisse zwischen die Variablen an. Der Fehler ist dann gegeben durch:
+		\begin{align}
+			\Delta \left(\frac{x}{y}\right) = \abs{\frac{x}{y}}\relquad{x,y}
+		\end{align}
+		\begin{center}
+			\begin{tabular}{lrrr}
+				\toprule
+				Variable & Literatur & Experimentell & Bemerkung \\
+				\midrule
+				$\nicefrac{A}{B}$ & $-3$ & \num{-2.99(20)} & stimmen überein \\
+				$\nicefrac{D}{C}$ & $\num{-0.6}$ & \num{-0.62(7)} & stimmen überein \\
+				$\nicefrac{E}{F}$ & $\num{-1,16667}$ & \num{-1,23(18)} & stimmen überein \\
+				$\nicefrac{E}{G}$ & $\num{11,6667}$ & \num{27(9)} & verträglich \\
+				$\nicefrac{F}{G}$ & $\num{-10}$ & \num{22(7)} & verträglich \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		Die Abweichungen sind vermutlich der oben beschriebenen Fehlerquellen zufolge. 
+
+		Die Nullstellen der Fit werden mit WolframAlpha berechnet. Dabei ist die Fehler aus zeitlichen Gründen vernachlässigt.
+		\begin{center}
+			\begin{tabular}{lrrrr}
+				\toprule
+				$l$ & $2$ & $3$ & $4$ & $4$ \\
+				Manuell/\si{\degree} & \num{125.3(7)} & \num{141.2(7)} & \num{110.2(7)} & \num{152.7(7)} \\
+				Fit/\si{\degree}     & \num{125.34}   & \num{141.93}   & \num{102.69}   & \num{150.92} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		Sie stimmen also überein bzw. für $\SI{110.2(7)}{\degree}$ verträglich.
+
+
+	\subsection{Teilversuch 2b: Bestimmung der $l$-Quantenzahl durch zweidimensionale Darstellung der Messergebnisse als Orbitalform}
+		\begin{figure}[!ht]
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{images/tv2b-180deg-peak1-angle.eps}
+				\caption{$l = 1, m=0$}
+				% \vspace{0.5\baselineskip}
+				\label{fig:tv2b-1}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{images/tv2b-180deg-peak2-angle.eps}
+				\caption{$l = 2, m=0$}
+				% \vspace{0.5\baselineskip}
+				\label{fig:tv2b-2}
+			\end{subfigure}
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{images/tv2b-180deg-peak3-angle.eps}
+				\caption{$l = 3, m=0$}
+				% \vspace{0.5\baselineskip}
+				\label{fig:tv2b-3}
+			\end{subfigure}
+		    \caption{Teilversuch 2b}
+		\end{figure}
+		Abweichungen z.b. bei Abbildung \ref{fig:tv2b-2} sind vermutlich wegen Störungen während der Messungen.
+
+		Wie können die $l$-Quantenzahl bestimmen, indem wir die Anzahl der Nullstellen zahlen, wenn wir $\theta$ von \SI{0}{\degree} bis \SI{180}{\degree}. Die Anzahl der Nullstellen ist genau $l$.
+
+		Andere Auswertungen siehe Laborprotokoll.
 
 
 
