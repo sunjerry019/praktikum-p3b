@@ -1,0 +1,10 @@
+\subsection{Regelmäßiger Abstand}
+    \label{appdx:tv1-1}
+    {  
+        % % Surpress "errors" in minted
+        % https://tex.stackexchange.com/a/289068
+        \renewcommand{\fcolorbox}[4][]{#4}
+        \inputminted[linenos,breaklines,autogobble,frame=leftline,framesep=10pt]{gnuplot}{plots/tv1-1.gp}
+    }
+    Rohausgabe:
+    \inputminted[linenos,breaklines,autogobble,frame=leftline,framesep=10pt]{text}{plots/tv1-1.gp.out}

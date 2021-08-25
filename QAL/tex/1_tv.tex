@@ -1,2 +1,126 @@
-\section{Teilversuch 1: }
-	
+\newcommand{\qm}{Quantenmechanik}
+
+\section{Teilversuch 1: Lebensdauer eines Teilchen im unendlich tiefen Potientialtopf}
+	\subsection{Teilversuch 1a: Verständnis zur Software SpektrumSLC.exe}
+		\begin{figure}[!ht]
+		    \centering
+		    \includegraphics[width=0.8\textwidth]{./images/tv1a.eps}
+		    \caption{Resonanzkurve einer geschlossenen Rohre ($d = \SI{225(1)}{\milli\meter}$)}
+		    \label{fig:tv1a-osz}
+		\end{figure}
+		Diese Resonanzkurve ist auch was theoretisch zu erwarten ist. Da die Rohre geschlossen ist, kann nur stehende Wellen von bestimmten Frequenzen/Wellenlängen entstehen. Bei diesen stehenden Wellen erhalten wir dann ein Maxima für den Response. Somit ergibt sich eine Resonanzkurve mit mehrerer Peaks. 
+
+		Die Beschreibung der Verarbeitungsschritte des Signals finden Sie im Laborprotokoll.
+
+	\subsection{Teilversuch 1b: Messung der Lebensdauer eines Teilchen im unendlich tiefen Potientialtopf}
+		Da die Fit Paramters nicht ausgedruckt sind, sind sie hier beschrieben:
+		\begin{center}
+			\begin{tabular}{l | *{4}{r}}
+				\toprule
+				Peak & \num{1} & \num{2} & \num{3} & \num{4} \\
+				\midrule
+				Frequency / \si{\hertz} & \num{5719.715} & \num{6853.203} & \num{7989.781} & \num{9124.208} \\
+				Amplitude / a.u.        & \num{59.0441} & \num{41.929} & \num{31.0203} & \num{22.639} \\
+				Width / \si{\hertz}     & \num{17.634} & \num{18.732} & \num{19.371} & \num{20.437} \\
+				Phase / \si{\degree}    & \num{-46.7} & \num{-1.7} & \num{29.9} & \num{57.9} \\
+				\bottomrule
+				\toprule
+				Peak & \num{5} & \num{6} & \num{7} & \num{8} \\
+				\midrule
+				Frequency / \si{\hertz} & \num{10259.772} & \num{11393.832} & \num{12524.178} & \num{13641.917} \\
+				Amplitude / a.u.        & \num{14.1618} & \num{13.2206} & \num{9.5492} & \num{7.4138} \\
+				Width / \si{\hertz}     & \num{22.807} & \num{23.386} & \num{27.648} & \num{33.978} \\
+				Phase / \si{\degree}    & \num{63.8} & \num{90.7} & \num{98.3} & \num{133.8} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		Siehe Laborprotokoll für den Plot. Die Kurveanpassung sieht nach Augenmaß ziemlich gut aus. 
+
+		\subsubsection{Regelmäßiger Abstand}
+			Wie im letzten Teilversuch beschrieben, entstehen wegen der bestimmten Länge der Rohre nur bei bestimmen Wellenlänge stehende Wellen. Da die Rohre am beiden Enden geschlossen ist, muss die Schallgeschwindigkeit am Randen null sein, was zu einer Maxima im Druck führt. Diesen Druck messen wir dann mit unsere Mikrofon. Solche stehenede Wellen können wir mit Abbildung 1 der Anleitung veranschaulich machen:
+			\begin{figure}[!ht]
+			    \centering
+			    \includegraphics[width=0.45\textwidth]{./images/standing-waves.jpg}
+			    \caption{Stehende Welle bzw. stationäre Zustände in der Rohre/Potentialtopf}
+			    \label{fig:standing-waves}
+			    \vspace{-1em}
+			\end{figure}
+
+			Im Fall der Quantenmechanik muss die Aufenthaltswahrscheinkeit bei der Rände null sein, sind also hier als Minima der Wellenfunktion repräsentiert. 
+
+			Im Fall der Akustische Resonanz sind jedoch die Ende bei einem Maximum und nicht Minimium, wie in der obigen Abbildung. Wir transformieren somit die Sinuskurven hier in Kosinuskurven, sodass am Ende Maxima sind.
+
+			Die Randbedingung für eine stehende Welle ($\cong$ stationäre Zustand) bleibt unverändert:  
+			\begin{align}
+				L = \frac{n\lambda}{2} = \frac{nv}{2f} &&\Rightarrow&& f = \frac{v}{2L} \times n
+			\end{align}
+			Da hier der Fokus dieses Teilversuchs nicht die stehende Welle ist, sondern die Lebensdauer, machen wir nur eine grobe Abschätzung, ob die Ergenisse vernünftig sind. 
+
+			Die Schallgeschwindigkeit im Luft beträgt ungefähr \SI{343}{\meter\per\second} bei \SI{20}{\celsius}\footnote{\url{https://www.weather.gov/epz/wxcalc_speedofsound}, \today}. Man soll also $f$ in Vielfaches von 
+			\begin{align}
+				\frac{v}{2L} = \frac{\SI{343}{\meter\per\second}}{2\left(\SI{0.15}{\meter}\right)} = \SI{1143}{\hertz}
+			\end{align}
+			erhalten.
+			\begin{center}
+				\begin{tabular}{l *{7}{r}}
+					\toprule
+					Peak $i \rightarrow j$ & \num{1} $\rightarrow$ \num{2} & \num{2} $\rightarrow$ \num{3} & \num{3} $\rightarrow$ \num{4} & \num{4} $\rightarrow$ \num{5} & \num{5} $\rightarrow$ \num{6} & \num{6} $\rightarrow$ \num{7} & \num{7} $\rightarrow$ \num{8} \\
+					\midrule
+					$f_j - f_i$ / \si{\hertz} & \num{1133.488} & \num{1136.578} & \num{1134.427} & \num{1135.564} & \num{1134.06} & \num{1130.346} & \num{1117.739} \\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+			Wir plotten nun die Frequenz $f$ gegen die Peak-Nummer $n$ und führen eine Kurveanpassung zu $f = mn + c$ durch (Siehe Appendix \ref{appdx:tv1-1}):
+			\begin{figure}[!ht]
+			    \centering
+			    \input{plots/tv1-1.tex}
+			    \caption{Kurveanpassung: \texttt{rms of residuals} $=\num{6.26596}$, klein gegenüber Messwerten}
+			    \label{fig:tv1-1}
+			\end{figure}
+
+			Als Endergebnis erhalten wir $m = \SI{1132.8(10)}{\hertz}$.
+
+			% Wir erhalten also $\overline{f_j - f_i} = \SI{1131.7(25)}{\hertz}$, wobei den Mittelwert mittels \texttt{AVERAGE} und Unsicherheit mittels $\nicefrac{\text{\texttt{STDEV.S}}}{\sqrt{N}}$ berechnet war. 
+
+			Diese zwei Ergebnisse unterscheidet sich zwar signifikant voneinander, ist aber Großeordnungsmäßig ziemlich nah. Die Abweichung ist wahrscheinlich wegen der nicht genauen Temperatur. Außerdem ist der letzte Abstand von \SI{1117.739}{\hertz} ziemlich weit von der anderen Werten. Die Randbedingungen entsprechen vielleicht nicht die Echten im Experiment.
+
+		\subsubsection{Abnehmende Amplitude}
+			Man sieht auch vom Plot im Laborprotokoll, dass die Amplitude mit steigenden $n$ abnimmt. Das ist Analog zu den abnehmenden Koeffizienten der Fouriertransformation im Quantenmechanischen Fall.
+
+		\subsubsection{Energieniveau}
+			Die horizontale $f$-Achse stellt mit der Resonanzpeaks eine Quantisierung dar. Die Achse kann also für die quantisierte Energieniveau dienen.
+
+		\subsubsection{Lebensdauer}
+			In der Akustik is die Lebensdauer von Reibung bedingt. Die Frequenzen kann man auch nicht direkt in Energie umwandeln. Die Resonanzen sind eine Folge der gedämpfte angetriebene Schwingung, somit bleibt auch eine stehende Welle entstehen, wenn sie vom Lautsprecher weiter angetrieben ist, egal welche Frequenz sie ist. 
+
+			In der \qm{} geht es um einen statistischen Prozess und kommt aus der Heisenbergischen Unschärferelation. Ein angeregter Zustand zerfällt in endlicher Zeit in den Grundzustand und die Lebensdauer beschreibt die mittlere Zeit, in der der angeregete Zustand angeregt bleibt. Das kann man leider nicht im akustischen Fall nachmachen.
+
+			Aus der Heisenbergischen Unschärferelation ist $\Delta E \Delta t \geq \nicefrac{h}{2\pi}$. Da $\Delta E \propto \Delta f$ ist, ist die Lebensdauer $\Delta t$ somit propotional zu $\nicefrac{1}{\Delta f}$. Wir bringen diese Analogie zu Akustik und plotten nun $\nicefrac{1}{\Delta f}$ gegen $n$ und führe eine Kurveanpassung durch:
+			\begin{figure}[!ht]
+			    \centering
+			    \vspace{-1em}
+			    % https://tex.stackexchange.com/a/98142
+			    \resizebox{.9\textwidth}{!}{\input{plots/tv1-2.tex}}
+			    \caption{Lebensdauer in Abhängigkeit von Peak-Nummer, \texttt{rms of residuals} $=\num{0.00122663}$, klein gegenüber Messwerten}
+			    \label{fig:tv1-2}
+			    \vspace{-1em}
+			\end{figure}
+			
+			Man erkennt hier einen abnehmenden Trend mit steigender Peak-Nummer $n$. Aus der Anleitung ist die Energie $\Gamma = \nicefrac{\hbar}{\tau}$ im quantenmechanischen Fall mit der Lebensdauer verbunden. Also gilt:
+			\begin{align}
+				\tau = \frac{\hbar}{\Gamma} &&\overset{E_n ~\propto~ -\nicefrac{1}{n^2}}{\Rightarrow}&& \tau \propto n^2
+			\end{align}
+			Mit steigende Energie soll man dann eine kleinere Lebensdauer erwarten. Das ist auch genau das, was wir hier beobachten können. Die Kurveanpassung, sofern sinnvoll, sieht auch gut aus. 
+
+			Es ist hier eine Kurveanpassung zu einer quadratischen Funktion (QM) durchgeführt, weil ich keine Theorie zur Abhängigkeit der Lebensdauer mit der Peak-Nummer in der Anleitung oder im Internet gefunden. Wenn solche Abhängigkeit tatsächlich existiert, werde ich mich freuen, wenn wir sie im Nachgespräch klären können.
+
+
+
+
+
+
+
+
+
+
+
