@@ -1,0 +1,230 @@
+\documentclass[twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{libertine}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[a4paper]{geometry}
+\usepackage{pdfpages}
+\usepackage{parskip}
+\usepackage{amsmath, amsthm, amssymb, commath, mathtools}
+\usepackage{cancel}
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{nicefrac}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{tabu}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\graphicspath{{./plots/}{./images/}}
+\usepackage{wrapfig}
+\definecolor{capblue}{HTML}{00709B}
+\usepackage[margin=1cm,font={small},labelfont={color=capblue}]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{minted}
+\usepackage{appendix}
+\usepackage{icomma}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{footmisc}
+\usepackage[separate-uncertainty=true]{siunitx}
+\sisetup{locale = DE}
+\usepackage{tcolorbox}
+
+\usepackage{ccicons}
+
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{hyperref}
+\usepackage{bookmark}
+% https://tex.stackexchange.com/a/33701
+\makeatletter
+    \newcommand{\nonum}[0]{%
+        \let\@oldseccntformat\@seccntformat %
+        \renewcommand\@seccntformat[1]{}%
+        }
+    \newcommand{\resnum}[0]{\let\@seccntformat\@oldseccntformat}
+\makeatother
+
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+% \usepackage[style=iso-authoryear,sortcites=true,sorting=nyt,backend=biber,language=ngerman,natbib=true,sortlocale=de_DE]{biblatex}
+% \addbibresource{references.bib}
+% \newcommand{\mkbibbracketscol}[1]{\textcolor{gray}{\mkbibbrackets{#1}}}
+% \DeclareCiteCommand{\cite}[\mkbibbracketscol]
+%   {\usebibmacro{prenote}}
+%   {\usebibmacro{citeindex}%
+%    \usebibmacro{cite}}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
+% \DeclareCiteCommand{\parencite}[\mkbibbracketscol]
+%   {\usebibmacro{prenote}}
+%   {\usebibmacro{citeindex}%
+%    \usebibmacro{cite}}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
+
+% \DeclareCiteCommand{\cbx@textcite}[\textcolor{gray}]
+%   {\usebibmacro{textcite:init}}
+%   {\usebibmacro{citeindex}%
+%    \usebibmacro{textcite}}
+%   {}
+%   {\usebibmacro{textcite:postnote}}
+
+% \DefineBibliographyStrings{ngerman}{%
+%     bibliography    = {Literaturverzeichnis},
+%     andothers       = {u.\,a.\adddot}
+% }
+
+% \let\realcitep\citep
+% \renewcommand*{\citep}[1]{{\footnotesize\realcitep{#1}}}
+
+\newcommand{\versuch}[0]{ROE}
+\newcommand{\versuchLang}[0]{Röntgenstrahlung: Bragg-Reflexion und Röntgenflourezenzanalyse}
+
+\hypersetup{
+	pdftitle={P3B -- \versuch{} Auswertung},
+	pdfauthor={Yudong Sun},
+	bookmarksnumbered=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=2,
+	pdfstartview=Fit,
+	pdfpagemode=UseOutlines,
+	colorlinks=true,
+	linkcolor=capblue,
+	filecolor=magenta,      
+	urlcolor=blue,
+    citecolor=gray
+}
+\urlstyle{same}
+
+\title{\versuch{} -- \versuchLang \\ Auswertung}
+\author{Yudong Sun\\Gruppe L8}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{Yudong Sun}
+\fancyhead[LO]{Auswertung -- \versuch}
+\fancyhead[LE]{Yudong Sun}
+\fancyhead[RE]{Auswertung -- \versuch}
+\cfoot{\thepage}
+
+% Custom Defs
+\newcommand*{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand*{\maxi}[1]{\text{max}\left(#1\right)}
+\newcommand*{\mini}[1]{\text{min}\left(#1\right)}
+\newcommand*{\todo}[1]{\textcolor{red}{TODO: #1}}
+\newcommand*{\iu}[1]{\textit{\underline{#1}}}
+\newcommand*{\gnuplot}[0]{\texttt{gnuplot}}
+\newcommand*{\captionbr}[0]{\\\rule{\textwidth}{0pt}\\\vspace{-\baselineskip}}
+\newcommand*{\sigfig}[1]{\hspace{0.5cm}\text{(#1 sig. Zif.)}}
+\newcommand*{\pbrace}[1]{\left(#1\right)}
+\newcommand*{\sbrace}[1]{\left[#1\right]}
+\newcommand*{\bDelta}[1]{\pbrace{\Delta #1}}
+\newcommand*{\overbar}[1]{\overline{\raisebox{0pt}[1.2\height]{$#1$}}} % https://tex.stackexchange.com/a/87615
+\newenvironment{beispiel}
+    {\begin{tcolorbox}[title=Beispielrechnung]}
+    {\end{tcolorbox}}
+
+\newcommand*{\realzahl}[0]{\mathbb{R}}
+\newcommand*{\natzahl}[0]{\mathbb{N}}
+\newcommand*{\ratzahl}[0]{\mathbb{Q}}
+\newcommand*{\intzahl}[0]{\mathbb{Z}}
+\newcommand*{\boolzahl}[0]{\mathbb{B}}
+
+\newcommand*{\question}[1]{\textit{\textcolor{Magenta}{#1}}}
+
+% \addto\captionsngerman{
+%     \let\oldfigname\figurename
+%     \renewcommand{\figurename}{[\oldfigname}
+%     \let\oldthefig\thefigure
+%     \renewcommand{\thefigure}{\oldthefig]}
+% } % https://tex.stackexchange.com/a/17490
+% https://tex.stackexchange.com/a/101624 new line in caption
+
+% Gaußsche Fehler Erzeuger
+\makeatletter
+    \newcommand{\gausserror}[2]{% \gausserror{G}{faktoren}
+        \sqrt{%
+            \@tempswafalse
+            \@for\factor:=#2
+            \do{
+                \if@tempswa+%
+                \else%
+                    \@tempswatrue%
+                \fi%
+                \left(\pdv{#1}{\factor}\Delta\factor\right)^2%
+            }%
+        }
+    }
+\makeatother
+% https://tex.stackexchange.com/a/59912
+% https://riptutorial.com/latex/example/28657/loops---repeating-things
+
+% Add quad
+\makeatletter
+    \newcommand{\addquad}[1]{% \gausserror{G}{faktoren}
+        \sqrt{%
+            \@tempswafalse
+            \@for\factor:=#1
+            \do{
+                \if@tempswa+%
+                \else%
+                    \@tempswatrue%
+                \fi%
+                \left(\Delta\factor\right)^2%
+            }%
+        }
+    }
+\makeatother
+
+% rej quad
+\makeatletter
+    \newcommand{\relquad}[1]{% \gausserror{G}{faktoren}
+        \sqrt{%
+            \@tempswafalse
+            \@for\factor:=#1
+            \do{
+                \if@tempswa+%
+                \else%
+                    \@tempswatrue%
+                \fi%
+                \left(\frac{\Delta\factor}{\factor}\right)^2%
+            }%
+        }
+    }
+\makeatother
+
+\newcommand*{\ub}[1]{\underbracket[0.1ex]{#1}}
+\newcommand*{\ob}[1]{\overbracket[0.1ex]{#1}}
+\newcommand*{\brc}[2]{\mathrlap{\ub{\phantom{#1}}_{#2}}#1}
+\newcommand*{\brd}[2]{\mathrlap{\ob{\phantom{#1}}^{#2}}#1}
+
+% / Custom Defs
+
+\begin{document}
+
+\maketitle
+
+% Einstellungen
+\nonum
+\numberwithin{equation}{section}
+% / Einstellungen
+
+\input{1_tv.tex}
+\input{2_tv.tex}
+\input{3_tv.tex}
+
+\resnum
+\newpage
+\appendix
+\input{0_appendices.tex}
+\end{document}

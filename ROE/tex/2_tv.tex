@@ -1,0 +1,49 @@
+\section{Teilversuch 2: Energiespektrum einer Röntgenröhre in Abhängigkeit der Spannung}
+	Wir haben hier für jede Linie ($K_\alpha$ bzw. $K_\beta$) 5 Datenpunkten für $n\lambda$. Wir berechnen daraus die Wellenlänge $\lambda$ und bilden die Mittelwerte. Die Fehlerfortpflanzung erfolgt wie Gleichung \eqref{eqn:tv1-error} aber zusätzlich mit $\lambda_4$ und $\lambda_5$:
+	\begin{align}
+		\Delta \overline{\lambda} = \frac{\addquad{\lambda_1, \lambda_2, \lambda_3, \lambda_4,\lambda_5}}{5} \label{eqn:tv2-error}
+	\end{align}
+	Wir runden dabei alle Werten gemäß der allbekannten Rundungsregeln. Bei der $U=\SI{20}{\kilo\volt}$ Messung haben wir keine Peaks erhalten.
+	\begin{center}
+		\vspace{\parskip}
+		\begin{tabular}{llrrrr}
+			\toprule
+			&& \multicolumn{2}{c}{$K_\alpha$} & \multicolumn{2}{c}{$K_\beta$} \\
+			\cmidrule(lr){3-4} \cmidrule(lr){5-6} % https://tex.stackexchange.com/q/180368
+			$U/\si{\kilo\volt}$ & $n$ & $n\lambda/\si{\pico\meter}$ & $\lambda/\si{\pico\meter}$ & $n\lambda/\si{\pico\meter}$ & $\lambda/\si{\pico\meter}$ \\
+			\midrule
+			\multirow{3}{*}{\num{35.0}} & $1$ & \num{71.3(12)} & \num{71.3(12)} & \num{63.4(12)} & \num{63.4(12)} \\
+			& $2$ & \num{142.6(12)} & \num{71.3(6)} & \num{126.6(10)} & \num{63.3(5)} \\
+			& $3$ & \num{213.5(12)} & \num{71.2(4)} & \num{190.2(8)} & \num{63.40(27)} \\
+			\cmidrule(lr){2-6}
+			\multirow{2}{*}{\num{25.0}} & $1$ & \num{71.1(11)} & \num{71.1(11)} & \num{63.4(10)} & \num{63.4(10)} \\
+			& $2$ & \num{142.4(11)} & \num{71.2(6)} & \num{126.6(10)} & \num{63.3(5)} \\
+			\cmidrule(lr){4-4} \cmidrule(lr){6-6}
+			&& (Mittelwert) & \num{71.2(4)} & (Mittelwert) & \num{63.4(4)} \\
+			&& (TV1) & \num{71.3(5)} & (TV1) & \num{63.4(5)} \\
+			&& ($\lambda_\text{Lit}$) & \num{71.08} & ($\lambda_\text{Lit}$) & \num{63.09} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	Die Werten vom Teilversuch 2 stimmen also mit der Werten von Teilversuch 1 und mit der Literaturwerten überein.
+
+	Man sieht im Spektrum drei deutliche Effekte:
+	\begin{enumerate}
+		\item Je höher die Spannung, desto größer die Anzahl der Ereignissen (vertikale Achse)
+
+			Wir erhalten den Strom während des Versuchs immer konstant. Das heißt, dass die Anzahl der Elektronen je Zeiteinheit, die vom Kathode zu Anode kommt, bleibt immer gleich. Wenn die Beschleunigungsspannung aber größer ist, haben die Elektronen im Mittel mehr Energie. Das führt dazu, dass es für jede Energie mehr Elektronen gibt. Daraus ergibt sich dann insgesamt mehr Röntgensstrahlung aus der Röhre, was wir hier als eine größere Anzahl an Ereignisse messen können.
+
+		\item Je höher die Spannung, desto kleiner der Grenzwellenlänge $\lambda_\text{min}$. Die kontinuierliche Bremsstrahlung verschiebt sich auch nach links.
+
+			Die Grenzwellenlänge ergibt sich, wenn die gesamte kinetische Energie von einem beschleunigten Elektron in einem Röntgenphoton umgewandelt ist. Das ist eine Folge der Energieerhaltung. Da Energie eines Photons inversproportional zu Wellenlänge ist, bedeutet eine größere Energie eine kleinere Wellenlänge. 
+
+			Mit größerer Spannungen, sind die Elektronen in einem stärkeren E-Feld beschleunigt. Sie haben somit mehr kinetische Energie, was in Röntgenstrahlung umgewandelt werden kann. Deswegen beobachten wir insgesamt eine links Verschiebung (kleinere Wellenlänge $\Leftarrow$ größere Energie).
+
+			% uch Duane-Huntsches Verschiebungsgesetz 
+
+		\item Bei $U = \SI{20}{\kilo\volt}$ ist keine Peaks zu sehen.
+
+			Das liegt vermutlich daran, dass es einfach zu wenig Elektronen gibt, um Elektronen aus innere Schalen rauszustoßen. Die Elektronen sind vor dem Treffen eines Elektron im Atom schon durch die Bremsstrahlung gebremst und somit haben nicht genug Energie, um Löcher in inneren Schalen zu erzeugen. Somit ergibt sich auch kaum charakristische Linien.
+
+			Die Theorie weißt ich leider nicht genau. Ich werde mich freuen
+	\end{enumerate}
