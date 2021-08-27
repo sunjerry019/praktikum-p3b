@@ -1,1 +1,25 @@
-\section{Teilversuch 3: Bestimmung der $m$-Quantenzahl}
+\section{Teilversuch 4: Röntgenfloureszenzanalyse}
+	Aus der Auswertung sieht man eine etwa lineare Abhängigkeit zwischen $\sqrt{\nicefrac{E}{R_y}}$ und die Ordnungszahl $Z$, was auch im Moseleys Gesetz vorhergesagt ist, also entspricht das Gesetz die Realität. 
+
+	Bei der Abschirmungskonstante sehe ich leider keine eindeutige Trend. Obwohl die Abschirmungskonstante nur positiv sein sollte, habe ich auch einige negative Abschirmungskonstante erhalten. Die Werten sind also vermutlich nicht die zu erwarten sind. 
+
+	Die Abschirmungskonstant hängt stark von der Kernladungszahl und elektronische Konfiguration ab. In unserem Datensatz haben wir alle Übergangsmetalle als Probe verwendet. Es geht also immer um die $3d$- bzw. $4d$-Elektronen. Nach Wikipedia\footnote{\url{https://de.wikipedia.org/wiki/Abschirmung\_(Atomphysik)\#Slater-Regeln}} sollen weitere $3d$ Elektronen nicht zur Abschirmungskonstante beitragen, wenn die die Übergang zwischen die Schalen $n=1$ und $n=2$ ($K_\alpha$) betrachten. Es ist mir also nicht so klar, wie die erwartete Trend entsteht. Vielleicht habe ich was falsch verstanden, aber ich würde mich freuen, wenn wir das im Nachgespräch tiefer eingehen können.
+
+	% Je größer die Ordnungszahl, je mehr Elektronen gibt es im Atom in der äußeren Schalen. 
+	\newpage
+	Die mögliche Fehlerquellen sind:
+	\begin{enumerate}
+		\item Schlecht bestimmte Linien
+
+			Die Auflösung des Detektors ist nicht besonders hoch im Vergleich zu der Linienbreite der einzelnen Linien. Somit könnte es sein, dass die echte Peaks nicht richtig bestimmt worden, zum Beispiel, wenn sie zwischen zwei Detektorkänale liegen. Wenn die Kalibrierung falsch waren, dann werden die Messungen für die andere Linien auch entsprechen falsch sein. Das kann man überprüfen, indem mehr Linien zur Kalibrierung verwendet. 
+
+		\item Formel ist sehr empfindlich und reagiere stark auf die bestimmte Linienenergien. 
+
+			Die Formel für die Abschirmungskonstant ist gegeben durch:
+			\begin{align}
+				\sigma_{j,i} = Z - \sqrt{\frac{\nicefrac{E}{R_y}}{\nicefrac{1}{n_i^2} - \nicefrac{1}{n_j^2}}} =
+				Z - \sqrt{E}\sqrt{\frac{1}{R_y\left(\nicefrac{1}{n_i^2} - \nicefrac{1}{n_j^2}\right)}}
+			\end{align}
+			Da die Abschirmungskonstante ungefähr im Bereich $0$-$3$ liegen soll, sind $Z$ und der zweite Faktor numerisch sehr nah aneinander. Ein kleiner Fehler bei der Bestimmung der Energie kann dann zu stark abweichende Abschirmungskonstante führen. 
+	\end{enumerate}
+	Deswegen hatten wir die erwartete Beziehung aus unserem Experiment nicht erhalten. 

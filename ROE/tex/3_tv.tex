@@ -1,3 +1,35 @@
-\section{Teilversuch 3: Bestimmung der $m$-Quantenzahl}
+\newpage
+\section{Teilversuch 3: Duane-Huntsches Verschiebungsgesetz}
+	Auf der Kurveanpassungen erhalten wir die Messreihe:
+	\begin{center}
+		\vspace{\parskip}
+		\begin{tabular}{l*{8}{r}}
+		\toprule
+			$U/\si{\kilo\volt}$ & \num{35} & \num{34} & \num{32} & \num{30} & \num{28} & \num{26} & \num{24} & \num{22} \\
+		\midrule
+			$\lambda_\text{min}/\si{\pico\meter}$ & \num{33.8} & \num{34.8} & \num{37.0} & \num{39.8} & \num{42.7} & \num{46.1} & \num{49.4} & \num{53.8} \\
+		\bottomrule			
+		\end{tabular}
+		\vspace{\parskip}
+	\end{center}
+	Es ist kein Fehler im Programm angegeben. Es erfolgt also keine Fehlerrechnung.
 
+	Wir haben nach der Kurveanpassung im Programm die folgende Ergebnis bekommen:
+	\begin{center}
+		\begin{tabular}{llr}
+			\toprule
+			\multicolumn{2}{l}{Variable} & Wert \\
+			\midrule
+			$A$	& Steigung& \SI{1190}{\pico\meter\kilo\volt} \\
+			$h$	& Plancksches Wirkungsquantum & \SI{6.36e-34}{\joule\second} \\
+			\bottomrule 
+		\end{tabular}
+	\end{center}
+	Es gilt:
+	\begin{align}
+		\lambda_\text{min} = \frac{hc}{e}\left(\frac{1}{U}\right) &&\implies&& A = \frac{hc}{e}
+	\end{align}
+	Somit können wir das Plancksche Wirkungsquantum aus der Steigung ermitteln, was das Programm uns schon gemacht hat. Das Ergebnis von $h_\text{exp} = \SI{6.36e-34}{\joule\second}$ ist sehr nah an $h_\text{Lit} = \SI{6.626e-34}{\joule\second}$. Da es keine Unsicherheit vorhanden ist, können wir keine Aussage darüber schließen, ob die zwei Werte miteinander verträglich sind. Da die Werte aber sehr nah an andere sind, stimmen das Duane-Huntsches Verschiebungsgesetz. 
+
+	Eine mögliche Fehlerquelle ist die ungenaue Bestimmung des linearen Anteils der Kurve. Die Grenzwellenlänge $\lambda_\text{min}$ ist aber stark von der Kurveanpassung abhängig. Somit kann diese ungenaue Bestimmung zu Fehler in der Grenzwellenlänge führen.
 
